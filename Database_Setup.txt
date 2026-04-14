@@ -1,0 +1,33 @@
+CREATE TABLE [dbo].[People] (
+    [ID]           INT            IDENTITY (1, 1) NOT NULL,
+    [Name]         NVARCHAR (100) NOT NULL,
+    [Phone]        VARCHAR (20)   NOT NULL,
+    [Email]        VARCHAR (100)  NOT NULL,
+    [Role]         VARCHAR (20)   NOT NULL,
+    [Salary]       DECIMAL (18, 2) NULL,
+    [WorkType]     VARCHAR (20)   NULL,
+    [WorkingHours] INT            NULL,
+    [Subject1]     NVARCHAR (100) NULL,
+    [Subject2]     NVARCHAR (100) NULL,
+    [Subject3]     NVARCHAR (100) NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+/DATA:
+INSERT INTO People (Name, Phone, Email, Role, Salary, WorkType, WorkingHours, Subject1, Subject2, Subject3)
+VALUES 
+-- Student 
+('Alice Williams', '0123456780', 'alice.w@school.edu', 'Student', NULL, NULL, NULL, 'Mathematics', 'Physics', 'Computer Science'),
+('Diana Prince', '0444555666', 'diana.p@school.edu', 'Student', NULL, NULL, NULL, 'Biology', 'Chemistry', 'English'),
+('Edward Elric', '0777888999', 'edward.e@school.edu', 'Student', NULL, NULL, NULL, 'Chemistry', 'Physics', 'History'),
+('Harry Potter', '0888999000', 'harry.p@school.edu', 'Student', NULL, NULL, NULL, 'Physical Education', 'Art', 'Music'),
+('Isabella Swan', '0333444555', 'isabella.s@school.edu', 'Student', NULL, NULL, NULL, 'Literature', 'History', 'Geography'),
+
+-- Teacher
+('Bob Miller', '0987654321', 'bob.m@school.edu', 'Teacher', 4500.00, NULL, NULL, 'Mathematics', 'Statistics', NULL),
+('Fiona Gallagher', '0222333444', 'fiona.g@school.edu', 'Teacher', 4200.00, NULL, NULL, 'English', 'Literature', NULL),
+('Jack Sparrow', '0666777888', 'jack.s@school.edu', 'Teacher', 4800.00, NULL, NULL, 'Geography', 'History', NULL),
+
+-- Admin
+('Charlie Brown', '0111222333', 'charlie.b@school.edu', 'Admin', 3200.00, 'Full-time', 40, NULL, NULL, NULL),
+('George Washington', '0555666777', 'george.w@school.edu', 'Admin', 2500.00, 'Part-time', 20, NULL, NULL, NULL);
